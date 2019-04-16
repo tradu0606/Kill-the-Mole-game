@@ -1,0 +1,25 @@
+body{
+    text-align: center;
+
+}
+#gameContainer{
+    position: relative;
+    width: 500px;
+    height: 300px;
+    background-color: #B7A38E;
+}
+
+.molePic{
+    position: absolute;
+    background-image: url(kisspng-european-mole-royalty-free-clip-art-pupils-clipart-5ae08376068a45.9178500715246631580268.png);
+    height: 40px;
+    width: 40px;
+    background-repeat:no-repeat;
+    background-size:cover;
+    left: 40px;
+    top: 40px;
+}
+#score {
+    font-size: 20px;
+    color: red;
+}
