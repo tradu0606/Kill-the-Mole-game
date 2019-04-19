@@ -1,4 +1,4 @@
-Wrack-A-Mole
+Whack-A-Mole
 Description
 
 This is a variation of a Whack-A-Mole game. Whack-A-Mole is a popular arcade redemption game invented in 1976 by Aaron Fechter of Creative Engineering, Inc(Wikipedia). The game where you had to smash moles constantly coming out of their holes. 
