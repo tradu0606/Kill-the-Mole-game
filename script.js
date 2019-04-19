@@ -5,6 +5,8 @@ var timeMole = 1000
 var level = 0
 var messGameOver = `GAME OVER <br> Score ${score} <br> Lelel ${level}`
 var messCongr = `Congratulation! All moles are underground. Your score  ${score}`
+var smashAudio= new Audio();
+smashAudio.src = "assets/Dart.mp3";
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -43,6 +45,7 @@ function toZero(){
 function stopGameMain(){
     document.querySelector("#missed").innerHTML = `Missed ${missed}`
     document.querySelector("#score").innerHTML = `Score ${score}`
+    document.querySelector("#level").innerHTML = `Level ${level}`
     clearInterval(gameNav.setIntData);
     clearInterval(gameNav.setIntLevel);
     var elemLeft = document.querySelectorAll(".picCont")
@@ -58,11 +61,11 @@ function placeMole() {
     document.getElementById("gameContainer").appendChild(divCont)
     var mole = document.createElement("img")
     mole.setAttribute("class", "molePic")
-    mole.setAttribute("src", "mole.png")
+    mole.setAttribute("src", "assets/mole.png")
     divCont.appendChild(mole)
 
-    var x = getRandomInt(0, 630)
-    var y = getRandomInt(0, 330)
+    var x = getRandomInt(0, 780)
+    var y = getRandomInt(0, 210)
     divCont.style.left = `${x}px`
     divCont.style.top = `${y}px`
     setTimeout(function () { removeMole(divCont) }, 3000)
@@ -81,7 +84,7 @@ function removeMole(divCont) {
     }
     if (missed == 5) {
         stopGameMain()
-        messGameOver
+        messGameOver = `GAME OVER <br> Score ${score} <br> Lelel ${level}`
         gameOver(messGameOver)
         toZero()
     }
@@ -92,12 +95,18 @@ function removeMole(divCont) {
 function addScore(event) {
     event.preventDefault()
     if (event.target.className == "divCont") {
+        smashAudio.pause();
+        smashAudio.currentTime = 0;
+        smashAudio.play()
         event.target.setAttribute("data-id", "clicked")
         event.target.remove()
         score++
         document.getElementById("score").innerHTML = `Score ${score}`
     }
     else if (event.target.className == "molePic") {
+        smashAudio.pause();
+        smashAudio.currentTime = 0;
+        smashAudio.play()
         event.target.parentNode.setAttribute("data-id", "clicked")
         event.target.parentNode.remove()
         score++

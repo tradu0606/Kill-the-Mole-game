@@ -1,0 +1,142 @@
+body{
+    text-align: center;
+    background-color: #A0A0A0;
+    background: url("/assets/game-background.jpeg"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+@keyframes popUp{
+    0% { color: #A80010}
+    20% { color:rgb(160, 64, 74)}
+    40% { color: rgb(172, 91, 99)}
+    60% { color: rgb(172, 91, 99)}
+    80% { color:rgb(160, 64, 74)}
+    100% { color:#A80010}
+
+  }
+#name {
+    position: absolute;
+    font-family: 'Dokdo', cursive;
+    font-size: 110px;
+    color: #A80010;
+    left: 270px;
+    font-size: 110px;
+    top: 0;
+    margin:0;
+    padding: 0;
+    text-shadow:  4pt 3pt #470107;
+    animation-name: popUp;
+    animation-duration: .5s;
+    animation-fill-mode: both;
+    animation: popUp 1s infinite;
+}
+h1{
+    font-family: 'Dokdo', cursive;
+    font-size: 60px;
+    margin: 0;
+    padding: 0;
+}
+
+#nav {
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    margin: 0 auto;
+    left: 500px;
+    top: 120px;
+    color: #470107;
+    text-shadow: 0 0 3pt 2pt black
+}
+#start{
+    position: absolute;
+    width: 100px;
+}
+#endGame{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    cursor: auto;
+    top: 170px;
+    left: 950px;
+}
+#stopImg{
+    width: 200px;
+}
+ #endGame:hover{
+    color: #D1D1D1;
+    text-shadow: 2px 2px 4px white;
+}
+p{
+    margin:0;
+    cursor: default;
+}
+#score, #missed, #level {
+    height: 40px;
+    width: 200px;
+    font-family: 'Cute Font', cursive;
+    font-size:70px;
+    text-shadow: 0 0 3pt 2pt #D1D1D1;
+    padding: 0;
+    margin: 0;
+
+}
+
+
+.picCont{
+    position: absolute;
+    overflow:hidden;
+    height: 70px;
+    width: 70px;
+    left: 40px;
+    top: 40px;
+}
+.molePic {
+    margin-top: 70px;
+    max-width: 70px;
+    max-height:70px;
+}
+
+@keyframes move{
+    0% { margin-top: 50px; }
+    100% { margin-top: 0px;}
+  }
+
+  .picCont .molePic{
+    animation-name: move;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  .picCont:active .molePic:active {
+    cursor: url(/assets/hammerCursorWhack.png) 15 15, pointer;
+  }
+
+#borderCont {
+    position: absolute;
+    min-width: 850px;
+    min-height: 280px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0;
+    max-width: 500px;
+    left: 160px;
+    top: 300px;
+
+}
+#gameContainer{
+    position: relative;
+    width: 850px;
+    height: 280px;
+    margin: auto;
+    cursor: url(/assets/hammerCursor1.png) 15 15, pointer;
+    /*outline: 1px solid black;*/
+}
+
+#startImg {
+    max-width: 300px;
+    max-height:300px;
+    cursor: auto;
+}
